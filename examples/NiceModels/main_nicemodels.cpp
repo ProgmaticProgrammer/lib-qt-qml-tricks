@@ -27,6 +27,7 @@ int main (int argc, char * argv []) {
     }
 
     QQuickView view;
+    view.engine ()->addImportPath(app.applicationDirPath()+QStringLiteral("/../../../import"));
     registerQtQmlTricksModule (view.engine ());
     view.rootContext ()->setContextProperty ("testModel", testModel);
     view.setResizeMode (QQuickView::SizeRootObjectToView);
